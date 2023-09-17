@@ -1,2 +1,2 @@
 function getRandomHexColor(){return"#".concat(Math.floor(16777215*Math.random()).toString(16).padStart(6,"0"))}var startButton=document.querySelector("[data-start]"),stopButton=document.querySelector("[data-stop]"),intervalId=null;startButton.addEventListener("click",(function(){intervalId||(startButton.setAttribute("disabled",!0),stopButton.removeAttribute("disabled"),intervalId=setInterval((function(){document.body.style.backgroundColor=getRandomHexColor()}),1e3))})),stopButton.addEventListener("click",(function(){intervalId&&(startButton.removeAttribute("disabled"),stopButton.setAttribute("disabled",!0),clearInterval(intervalId),intervalId=null)}));
-//# sourceMappingURL=index.09ad79ee.js.map
+//# sourceMappingURL=01-color-switcher.c1bcd7fa.js.map
