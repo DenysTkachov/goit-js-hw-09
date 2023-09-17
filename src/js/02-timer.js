@@ -12,11 +12,11 @@ const options = {
 
     if (selectedDate <= currentDate) {
       alert('Please choose a date in the future');
+      startButton.setAttribute('disabled', true); // Блокируем кнопку при ошибке
       return;
     }
 
-    const startButton = document.querySelector('[data-start]');
-    startButton.removeAttribute('disabled');
+    startButton.removeAttribute('disabled'); // Разблокируем кнопку при правильной дате
   },
 };
 
@@ -50,6 +50,8 @@ function updateTimerDisplay(ms) {
   secondsElement.textContent = String(seconds).padStart(2, '0');
 }
 
+updateTimerDisplay(0);
+
 const startButton = document.querySelector('[data-start]');
 startButton.addEventListener('click', () => {
   const datetimePicker = document.querySelector('#datetime-picker');
@@ -75,3 +77,8 @@ startButton.addEventListener('click', () => {
     }
   }, 1000);
 });
+
+
+
+
+
